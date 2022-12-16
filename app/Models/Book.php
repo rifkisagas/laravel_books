@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
+    protected $table = 'books';
+    protected $fillable = ['judul' , 'penulis', 'tahun', 'penerbit'];
     use HasFactory;
     public static function getDataBooks(){
         $books = Book::all();
@@ -23,4 +25,6 @@ class Book extends Model
         }
         return $books_filter;
     }
+
+    
 }
